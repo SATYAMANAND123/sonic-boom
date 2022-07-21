@@ -290,15 +290,7 @@ function buildTests (test, sync) {
 
     stream.flush()
 
-    stream.on('drain', () => {
-      fs.readFile(dest, 'utf8', (err, data) => {
-        t.error(err)
-        t.equal(data, 'hello world\n')
-        stream.end()
-      })
-    })
-  })
-
+    
   test('flush', (t) => {
     t.plan(5)
 
